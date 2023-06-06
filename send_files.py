@@ -3,6 +3,14 @@ import os
 import requests
 
 
+url = 'http://20.185.67.127:8000/uploadfile/'
+files = {'file': ('../dogs/dog.jpg', open('dog.jpg', 'rb'), 'image/jpeg')}
+response = requests.post(url, files=files)
+print('The response from the server is:\n', response.text)
+
+
+
+
 def upload_file():
     url = 'http://20.185.67.127:8000/uploadfile'
     files = create_files("../dogs")
