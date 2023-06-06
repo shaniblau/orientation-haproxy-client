@@ -13,12 +13,9 @@ def upload_file():
 
 
 def create_files(directory: str):
-    files = []
+    files = {}
     file_names = os.listdir(directory)
     for name in file_names:
         file_path = os.path.join(directory, name)
-        files.append(('file', (name, open(file_path, 'rb'), 'image/jpeg')))
+        files[name] = ('file', (name, open(file_path, 'rb'), 'image/jpeg'))
     return files
-
-
-
