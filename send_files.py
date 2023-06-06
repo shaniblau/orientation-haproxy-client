@@ -13,11 +13,11 @@ def upload_file():
 
 
 def create_files(directory: str):
-    files: list = []
-    files_names: list = os.listdir(directory)
-    for name in files_names:
+    files = []
+    file_names = os.listdir(directory)
+    for name in file_names:
         file_path = os.path.join(directory, name)
-        files.append({'file': (open(file_path, 'rb'), 'image/jpeg')})
+        files.append(('file', (name, open(file_path, 'rb'), 'image/jpeg')))
     return files
 
 
