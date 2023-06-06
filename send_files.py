@@ -17,7 +17,7 @@ def create_files(directory: str):
     files_names: list = os.listdir(directory)
     for name in files_names:
         file_path = os.path.join(directory, name)
-        files.append({'files', open(file_path, 'rb')})
+        files.append({'file': (open(file_path, 'rb'), 'image/jpeg')})
     return files
 
 
